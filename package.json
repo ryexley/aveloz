@@ -1,0 +1,22 @@
+{
+  "name": "aveloz",
+  "version": "0.0.1",
+  "description": "A markdown editor, based on electron",
+  "main": "src/js/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ryexley/aveloz.git"
+  },
+  "keywords": [
+    "markdown",
+    "electron"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron-prebuilt": "^0.29.2"
+  }
+}
