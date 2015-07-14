@@ -7,6 +7,10 @@ gulp.task("clean:js", function (next) {
   del([path.join(buildConfig.buildRoot, "js")], next);
 });
 
+gulp.task("clean:css", function (next) {
+  del([path.join(buildConfig.buildRoot, "css")], next);
+});
+
 gulp.task("clean:static", function (next) {
   del([
     path.join(buildConfig.buildRoot, "index.html"),
