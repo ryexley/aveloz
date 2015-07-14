@@ -4,10 +4,7 @@ var gulpUtil = require("gulp-util");
 var webpack = require("webpack");
 var buildConfig = require("../config");
 
-console.log(path.resolve(buildConfig.sourceRoot, "js/main.js"));
-
 var config = {
-  devtool: "eval",
   entry: {
     "main": path.resolve(buildConfig.sourceRoot, "js/main.js")
   },
@@ -24,15 +21,23 @@ var config = {
   }
 };
 
-gulp.task("webpack", function (next) {
+gulp.task("webpack", ["clean:js"], function (next) {
   webpack(config, function (err, stats) {
     if (err) {
       throw new gulpUtil.PluginError("webpack", err);
-      gulpUtil.log("[webpack]", stats.toString({
-        // output options
-      }));
-
-      next();
     }
+
+    gulpUtil.log("[webpack]\n\n", stats.toString({
+      colors: true,
+      hash: false,
+      version: true,
+      timings: true,
+      chunks: true,
+      chunkModules: false,
+      cached: true,
+      cachedAssets: true
+    }), "\n");
+
+    next();
   });
 });
