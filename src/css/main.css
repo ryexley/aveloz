@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: HelveticaNeue;
-}
+@import "normalize.css/normalize";
+@import "base/**/*.css";
+@import "components/**/*.css";

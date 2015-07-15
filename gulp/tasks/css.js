@@ -11,8 +11,8 @@ var buildConfig = require("../config");
 
 var processors = [
   autoprefixer({ browsers: ["last 2 version"]}),
+  imports({ path: path.join(buildConfig.sourceRoot, "css"), glob: true }),
   cssnext(),
-  imports(),
   nested,
   mixins,
   csswring()
@@ -20,7 +20,7 @@ var processors = [
 
 gulp.task("css", ["clean:css"], function () {
 
-  gulp.src(path.join(buildConfig.sourceRoot, "css", "**/*.css"))
+  gulp.src(path.join(buildConfig.sourceRoot, "css", "main.css"))
       .pipe(postcss(processors))
       .pipe(gulp.dest(path.join(buildConfig.buildRoot, "css")));
 
