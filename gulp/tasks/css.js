@@ -5,6 +5,7 @@ var autoprefixer = require("autoprefixer-core");
 var cssnext = require("cssnext");
 var imports = require("postcss-import");
 var nested = require("postcss-nested");
+var variables = require("postcss-simple-vars");
 var mixins = require("postcss-mixins");
 var csswring = require("csswring");
 var buildConfig = require("../config");
@@ -14,6 +15,7 @@ var processors = [
   imports({ path: path.join(buildConfig.sourceRoot, "css"), glob: true }),
   cssnext(),
   nested,
+  variables(),
   mixins,
   csswring()
 ];

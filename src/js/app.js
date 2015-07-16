@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import Document from "./components/document";
 
 let App = React.createClass({
 
   render () {
     return (
-      <h1>Aveloz: A Markdown Editor</h1>
+      <section className="document-container">
+        <Document />
+      </section>
     );
   }
 
