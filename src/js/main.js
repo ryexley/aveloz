@@ -1,4 +1,13 @@
+import path from "path";
 import React from "react";
 import App from "./app";
 
-React.render(<App />, document.getElementById("root"));
+const Main = {
+
+  renderApp () {
+    React.render(<App />, document.getElementById("root"));
+  }
+
+};
+
+Main.renderApp();

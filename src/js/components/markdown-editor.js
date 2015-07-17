@@ -4,12 +4,8 @@ let MarkdownEditor = React.createClass({
 
   render () {
     return (
-      <section className="editor" contentEditable="true">
-# Heading 1
-## Heading 2
-
-* Bullet 1
-* Bullet 2
+      <section className="editor">
+        <textarea value={this.props.source}></textarea>
       </section>
     );
   }

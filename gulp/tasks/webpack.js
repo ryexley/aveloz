@@ -18,7 +18,8 @@ var config = {
     loaders: [
       { test: /\.(js|jsx)$/, loader: "babel", include: buildConfig.sourceRoot }
     ]
-  }
+  },
+  target: "atom"
 };
 
 gulp.task("webpack", ["clean:js"], function (next) {

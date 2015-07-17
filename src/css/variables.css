@@ -2,6 +2,8 @@ $baseFont: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helv
 $baseFontColor: #51696c;
 $baseFontWeight: 300;
 
+$editorFont: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+
 $appBackgroundColor: #101115;
 
 $documentBackgroundColor: #151718;

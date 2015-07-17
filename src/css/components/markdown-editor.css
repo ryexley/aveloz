@@ -8,5 +8,14 @@
   position: absolute;
   right: 50%;
   top: 0;
-  white-space: pre;
+
+  textarea {
+    @mixin stretch-panel;
+    background: $documentBackgroundColor;
+    border: 0;
+    font-family: $editorFont;
+    padding: 0.5rem;
+    resize: none;
+    width: 100%;
+  }
 }

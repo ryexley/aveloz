@@ -7,7 +7,7 @@ let Document = React.createClass({
   render () {
     return (
       <section className="document">
-        <Editor />
+        <Editor source={this.props.source} />
         <Preview />
       </section>
     );

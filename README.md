@@ -1,7 +1,19 @@
 A Markdown Editor, based on [Electron](https://electron.atom.io)
 ================================================================
 
-Goal: Markdown editor with built-in live-preview and OneNote-like "notebook" organizational capabilities.
+## The Vision
+
+Aveloz is (hopes to be) the markdown editor that I've always wanted, but never quite been able to find. The ultimate goal is for it to have the following features:
+
+* Core features:
+  * Markdown syntax highlighting
+  * Realtime live preview
+  * Export to various formats
+  * Realtime auto-save
+* Organizational features:
+  * The ability to define "notebooks" (something like what OneNote allows you to create)
+  * Notebooks should be bound to a folder on the local file system (should be configurable)
+  * Can contain a hierarchy of folders and files (just like any regular ole file system)
 
 ##### Aveloz??
 
