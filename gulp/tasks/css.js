@@ -14,9 +14,9 @@ var processors = [
   autoprefixer({ browsers: ["last 2 version"]}),
   imports({ path: path.join(buildConfig.sourceRoot, "css"), glob: true }),
   cssnext(),
+  mixins,
   nested,
   variables(),
-  mixins,
   csswring()
 ];
 

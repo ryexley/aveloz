@@ -1,0 +1,26 @@
+.toolbar {
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  width: 4rem;
+
+  ul {
+    @mixin unstyled-list;
+  }
+
+  a {
+    color: $baseFontColor;
+    display: inline-block;
+    font-size: 1.5rem;
+    height: 2rem;
+    text-align: center;
+    text-decoration: none;
+    width: 2rem;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}

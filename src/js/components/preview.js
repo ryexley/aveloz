@@ -5,7 +5,7 @@ let Preview = React.createClass({
   render () {
     return (
       <section className="preview">
-        <h3>Preview</h3>
+        Parsed markdown content will go here
       </section>
     );
   }
