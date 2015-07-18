@@ -1,16 +1,17 @@
 import path from "path";
 import fs from "fs";
+import { assign as _extend } from "lodash";
 
-const File = {
+const File = function (filepath) {
+  this.path = filepath;
+};
 
-  open (filepath, next) {
-    fs.exists(filepath, (exists) => {
-      if (exists) {
-        fs.readFile(filepath, "utf-8", next);
-      }
-    });
+_extend(File.prototype, {
+
+  open (next) {
+    fs.readFile(this.path, "utf-8", next);
   }
 
-};
+});
 
 export default File;

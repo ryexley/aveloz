@@ -13,10 +13,11 @@ var config = {
     filename: "[name].js"
   },
   plugins: [],
-  resolve: ["", ".js", ".jsx"],
+  resolve: ["", ".js", ".jsx", ".json"],
   module: {
     loaders: [
-      { test: /\.(js|jsx)$/, loader: "babel", include: buildConfig.sourceRoot }
+      { test: /\.(js|jsx)$/, loader: "babel", include: buildConfig.sourceRoot },
+      { test: /\.(json)$/, loader: "json" }
     ]
   },
   target: "atom"

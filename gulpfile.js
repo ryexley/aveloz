@@ -10,9 +10,9 @@
     run `gulp`.
 */
 
-var requireDir = require('require-dir');
+var requireDir = require("require-dir");
 
 // Require all tasks in gulp/tasks, including subfolders
-requireDir('./gulp/tasks', {
+requireDir("./gulp/tasks", {
   recurse: true
 });

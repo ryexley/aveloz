@@ -26,7 +26,8 @@ let App = React.createClass({
   },
 
   getFileData () {
-    File.open(path.resolve("README.md"), (err, contents) => {
+    const readme = new File(path.resolve("README.md"));
+    readme.open((err, contents) => {
       if (err) {
         console.log("ERROR opening file:", err);
       }
