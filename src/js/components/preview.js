@@ -4,8 +4,7 @@ let Preview = React.createClass({
 
   render () {
     return (
-      <section className="preview">
-        Parsed markdown content will go here
+      <section className="preview" dangerouslySetInnerHTML={{__html: this.props.html}}>
       </section>
     );
   }

@@ -8,7 +8,8 @@ let App = React.createClass({
 
   getInitialState () {
     return {
-      documentContents: "# New Document"
+      source: "# New Document",
+      html: "Document not yet parsed"
     }
   },
 
@@ -16,7 +17,7 @@ let App = React.createClass({
     return (
       <section className="app">
         <Toolbar />
-        <Document source={this.state.documentContents} />
+        <Document file={this.state} />
       </section>
     );
   },
@@ -27,15 +28,18 @@ let App = React.createClass({
 
   getFileData () {
     const readme = new File(path.resolve("README.md"));
-    readme.open((err, contents) => {
-      if (err) {
-        console.log("ERROR opening file:", err);
-      }
+    setTimeout(() => {
+      this.setState(readme);
+    }, 500);
+    // readme.open((err, contents) => {
+    //   if (err) {
+    //     console.log("ERROR opening file:", err);
+    //   }
 
-      this.setState({
-        documentContents: contents
-      });
-    });
+    //   this.setState({
+    //     documentContents: contents
+    //   });
+    // });
   }
 
 });
