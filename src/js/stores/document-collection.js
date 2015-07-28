@@ -1,4 +1,4 @@
-import { assign as _extend } from "lodash";
+import { assign as _extend, clone as _clone } from "lodash";
 import cuid from "cuid";
 import messenger from "sumac/dist/messenger";
 import File from "../model/file";
@@ -55,6 +55,7 @@ _extend(DocumentCollectionStore.prototype, messenger, {
       let file = new File(data.filepath);
 
       this.currentCollection.documents.push(file);
+      debugger;
       this.trigger("fileOpened", { document: file });
     }
   }
