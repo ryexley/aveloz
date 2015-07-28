@@ -10,34 +10,28 @@ class App extends Component {
 
   constructor () {
     super();
-    this.channel = "aveloz";
     this.configureMessaging({ wiretap: { enable: true } });
-    this.state = {
-      source: "# New Document",
-      html: "Document not yet parsed"
-    };
-
-    this.trigger("ready", { file: "/foo/bar" });
   }
 
   render () {
     return (
       <section className="app">
         <Toolbar />
-        <Document file={this.state} />
+        <Document />
       </section>
     );
   }
 
   componentDidMount () {
-    this.getFileData();
+    // this.getFileData();
+    this.trigger("openFile", { filepath: path.resolve("README.md") });
   }
 
   getFileData () {
-    const readme = new File(path.resolve("README.md"));
-    setTimeout(() => {
-      this.setState(readme);
-    }, 500);
+    // const readme = new File(path.resolve("README.md"));
+    // setTimeout(() => {
+    //   this.setState(readme);
+    // }, 500);
     // readme.open((err, contents) => {
     //   if (err) {
     //     console.log("ERROR opening file:", err);
@@ -53,8 +47,10 @@ class App extends Component {
 
 _extend(App.prototype, messenger, {
 
+  channel: "app",
+
   messages: {
-    ready: "aveloz app.ready"
+    openFile: "app file.open"
   }
 
 });

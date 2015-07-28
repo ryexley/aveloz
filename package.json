@@ -18,6 +18,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "cuid": "^1.2.5",
     "electron-prebuilt": "^0.29.2",
     "lodash": "^3.10.0",
     "osenv": "^0.1.3",
