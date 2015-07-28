@@ -5,7 +5,6 @@ import Preview from "./preview";
 let Document = React.createClass({
 
   render () {
-    console.log(this.props);
     return (
       <section className="document">
         <Editor source={this.props.file.source} />
