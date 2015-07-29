@@ -35,7 +35,7 @@ _extend(Document.prototype, messenger, {
   channel: "Document",
 
   subscriptions: {
-    renderDocument: "DocumentCollection document.opened"
+    renderDocument: "Document file.ready"
   }
 
 });

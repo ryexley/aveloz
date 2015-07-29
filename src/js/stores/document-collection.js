@@ -16,8 +16,7 @@ _extend(DocumentCollectionStore.prototype, messenger, {
   currentCollection: {},
 
   messages: {
-    ready: "DocumentCollection document.collection.store.ready",
-    fileOpened: "DocumentCollection document.opened"
+    ready: "DocumentCollection document.collection.store.ready"
   },
 
   subscriptions: {
@@ -55,8 +54,6 @@ _extend(DocumentCollectionStore.prototype, messenger, {
       let file = new File(data.filepath);
 
       this.currentCollection.documents.push(file);
-      debugger;
-      this.trigger("fileOpened", { document: file });
     }
   }
 
