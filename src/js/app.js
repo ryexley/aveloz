@@ -23,24 +23,7 @@ class App extends Component {
   }
 
   componentDidMount () {
-    // this.getFileData();
     this.trigger("openFile", { filepath: path.resolve("README.md") });
-  }
-
-  getFileData () {
-    // const readme = new File(path.resolve("README.md"));
-    // setTimeout(() => {
-    //   this.setState(readme);
-    // }, 500);
-    // readme.open((err, contents) => {
-    //   if (err) {
-    //     console.log("ERROR opening file:", err);
-    //   }
-
-    //   this.setState({
-    //     documentContents: contents
-    //   });
-    // });
   }
 
 };
