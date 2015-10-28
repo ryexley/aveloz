@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { assign as _extend } from "lodash";
 import messenger from "sumac/dist/messenger";
+import DocumentActions from "../actions/document";
+
+const documentActions = new DocumentActions();
 
 class MarkdownEditor extends Component {
 
@@ -18,18 +21,14 @@ class MarkdownEditor extends Component {
   }
 
   onMarkdownChanged (e) {
-    this.trigger("onMarkdownChanged", { updatedSource: e.target.value });
+    documentActions.sourceChanged({ updatedSource: e.target.value });
   }
 
 };
 
 _extend(MarkdownEditor.prototype, messenger, {
 
-  channel: "Document",
-
-  messages: {
-    onMarkdownChanged: "Document source.changed"
-  }
+  channel: "Document"
 
 });
 

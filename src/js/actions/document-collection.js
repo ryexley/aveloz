@@ -10,7 +10,6 @@ _extend(DocumentCollectionActions.prototype, messenger, {
   channel: "DocumentCollection",
 
   init (options = {}) {
-    console.log("DocumentCollectionActions:init");
   }
 
 });

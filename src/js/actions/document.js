@@ -9,8 +9,16 @@ _extend(DocumentActions.prototype, messenger, {
 
   channel: "Document",
 
+  messages: {
+    sourceChanged: "Document source.changed"
+  },
+
   init (options = {}) {
-    console.log("DocumentActions:init");
+    this.configureMessaging({ wiretap: { enable: true } });
+  },
+
+  sourceChanged (payload) {
+    this.trigger("sourceChanged", payload);
   }
 
 });

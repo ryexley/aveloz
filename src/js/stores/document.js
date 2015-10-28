@@ -10,12 +10,21 @@ _extend(DocumentStore.prototype, messenger, {
   channel: "Document",
 
   messages: {
-    ready: "Document document.store.ready"
+    ready: "Document document.store.ready",
+    sourceUpdated: "Document source.updated"
+  },
+
+  subscriptions: {
+    onSourceChanged: "Document source.changed"
   },
 
   init (options = {}) {
     this.configureMessaging({ wiretap: { enable: true } });
     this.trigger("ready");
+  },
+
+  onSourceChanged (data, env) {
+    this.trigger("sourceUpdated", data);
   }
 
 });

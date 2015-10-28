@@ -28,6 +28,14 @@ class Document extends Component {
     this.setState(data.document);
   }
 
+  onSourceUpdated (data, env) {
+    var updatedDocument = _extend(this.state, {
+      source: data.updatedSource
+    });
+
+    this.setState(updatedDocument);
+  }
+
 };
 
 _extend(Document.prototype, messenger, {
@@ -35,7 +43,8 @@ _extend(Document.prototype, messenger, {
   channel: "Document",
 
   subscriptions: {
-    renderDocument: "Document file.ready"
+    renderDocument: "Document file.ready",
+    onSourceUpdated: "Document source.updated"
   }
 
 });
