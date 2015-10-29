@@ -21,14 +21,17 @@ class MarkdownEditor extends Component {
   }
 
   onMarkdownChanged (e) {
-    documentActions.sourceChanged({ updatedSource: e.target.value });
+    documentActions.sourceChanged({
+      updatedSource: e.target.value,
+      fileId: this.props.documentId
+    });
   }
 
 };
 
 _extend(MarkdownEditor.prototype, messenger, {
 
-  channel: "Document"
+  channelName: "Document"
 
 });
 

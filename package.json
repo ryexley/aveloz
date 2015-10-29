@@ -27,7 +27,8 @@
     "react": "^0.13.3",
     "remarkable": "^1.6.0",
     "require-dir": "^0.3.0",
-    "sumac": "^0.3.1"
+    "sumac": "^0.3.1",
+    "uuid": "^2.0.1"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",

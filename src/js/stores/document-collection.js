@@ -9,7 +9,7 @@ const DocumentCollectionStore = function (options = {}) {
 
 _extend(DocumentCollectionStore.prototype, messenger, {
 
-  channel: "DocumentCollection",
+  channelName: "DocumentCollection",
 
   documentCollections: {},
 

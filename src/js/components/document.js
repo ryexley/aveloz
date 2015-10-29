@@ -18,8 +18,8 @@ class Document extends Component {
   render () {
     return (
       <section className="document">
-        <Editor source={this.state.source} />
-        <Preview html={this.state.html} />
+        <Editor source={this.state.source} documentId={this.state.id} />
+        <Preview html={this.state.html} documentId={this.state.id} />
       </section>
     );
   }
@@ -36,15 +36,24 @@ class Document extends Component {
     this.setState(updatedDocument);
   }
 
+  onPreviewUpdated (data, env) {
+    var updatedDocument = _extend(this.state, {
+      html: data.updatedHtml
+    });
+
+    this.setState(updatedDocument);
+  }
+
 };
 
 _extend(Document.prototype, messenger, {
 
-  channel: "Document",
+  channelName: "Document",
 
   subscriptions: {
     renderDocument: "Document file.ready",
-    onSourceUpdated: "Document source.updated"
+    onSourceUpdated: "Document source.updated",
+    onPreviewUpdated: "Document preview.updated"
   }
 
 });

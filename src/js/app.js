@@ -30,7 +30,7 @@ class App extends Component {
 
 _extend(App.prototype, messenger, {
 
-  channel: "app",
+  channelName: "app",
 
   messages: {
     openFile: "app file.open"

@@ -1,4 +1,3 @@
-import path from "path";
 import React from "react";
 import App from "./app";
 import DocumentCollectionStore from "./stores/document-collection";

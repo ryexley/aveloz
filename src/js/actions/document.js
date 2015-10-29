@@ -7,7 +7,7 @@ const DocumentActions = function (options = {}) {
 
 _extend(DocumentActions.prototype, messenger, {
 
-  channel: "Document",
+  channelName: "Document",
 
   messages: {
     sourceChanged: "Document source.changed"
@@ -19,6 +19,7 @@ _extend(DocumentActions.prototype, messenger, {
 
   sourceChanged (payload) {
     this.trigger("sourceChanged", payload);
+    this.publish(`${payload.fileId}.source.changed`, payload);
   }
 
 });

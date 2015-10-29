@@ -7,7 +7,7 @@ const DocumentCollectionActions = function (options = {}) {
 
 _extend(DocumentCollectionActions.prototype, messenger, {
 
-  channel: "DocumentCollection",
+  channelName: "DocumentCollection",
 
   init (options = {}) {
   }

@@ -7,15 +7,17 @@ const DocumentStore = function (options = {}) {
 
 _extend(DocumentStore.prototype, messenger, {
 
-  channel: "Document",
+  channelName: "Document",
 
   messages: {
     ready: "Document document.store.ready",
-    sourceUpdated: "Document source.updated"
+    sourceUpdated: "Document source.updated",
+    previewUpdated: "Document preview.updated"
   },
 
   subscriptions: {
-    onSourceChanged: "Document source.changed"
+    onSourceChanged: "Document source.changed",
+    onPreviewChanged: "Document preview.changed"
   },
 
   init (options = {}) {
@@ -25,6 +27,10 @@ _extend(DocumentStore.prototype, messenger, {
 
   onSourceChanged (data, env) {
     this.trigger("sourceUpdated", data);
+  },
+
+  onPreviewChanged (data, env) {
+    this.trigger("previewUpdated", data);
   }
 
 });
