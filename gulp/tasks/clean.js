@@ -3,17 +3,18 @@ var gulp = require("gulp");
 var del = require("del");
 var buildConfig = require("../config");
 
-gulp.task("clean:js", function (next) {
-  del([path.join(buildConfig.buildRoot, "js")], next);
+gulp.task("clean:js", function () {
+  del.sync([path.join(buildConfig.buildRoot, "js")]);
 });
 
-gulp.task("clean:css", function (next) {
-  del([path.join(buildConfig.buildRoot, "css")], next);
+gulp.task("clean:css", function () {
+  del.sync([path.join(buildConfig.buildRoot, "css")]);
 });
 
-gulp.task("clean:static", function (next) {
-  del([
+gulp.task("clean:static", function () {
+  del.sync([
     path.join(buildConfig.buildRoot, "index.html"),
-    path.join(buildConfig.buildRoot, "index.js")
-  ], next);
+    path.join(buildConfig.buildRoot, "index.js"),
+    path.join(buildConfig.buildRoot, "fonts/")
+  ]);
 });

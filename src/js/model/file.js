@@ -35,7 +35,7 @@ _extend(File.prototype, messenger, {
   },
 
   subscribeToSourceUpdates () {
-    this.subscribe(`${this.id}.source.changed`, _debounce(this.parseSource, 250));
+    this.subscribe(`${this.id}.source.changed`, _debounce(this.parseSource, 100));
   },
 
   parseSource (data, env) {
