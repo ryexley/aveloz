@@ -21,6 +21,10 @@ _extend(File.prototype, messenger, {
     previewChanged: "Document preview.changed"
   },
 
+  subscriptions: {
+    onFileSave: "app file.save"
+  },
+
   open () {
     fs.readFile(this.path, "utf-8", (err, contents, next) => {
       if (err) {
@@ -54,6 +58,10 @@ _extend(File.prototype, messenger, {
         html: this.html
       }
     });
+  },
+
+  onFileSave () {
+    console.log("Handling file save request. Saving file:", this.path);
   }
 
 });
