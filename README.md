@@ -24,4 +24,7 @@ ____
 ## TODO
 
 * Save file changes to disk
+* Implement keyboard shortcuts for toolbar actions (start with a keyboard shortcut for saving)
 * Implement/use the [Ace editor](https://ace.c9.io)
+* Editor and Preview scroll synchronization
+
