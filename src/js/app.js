@@ -2,7 +2,6 @@ import path from "path";
 import { assign as _extend } from "lodash";
 import React, { Component } from "react";
 import messenger from "sumac/dist/messenger";
-import File from "./model/file";
 import Document from "./components/document";
 import Toolbar from "./components/toolbar";
 

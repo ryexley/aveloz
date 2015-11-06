@@ -1,5 +1,6 @@
 import React from "react";
 import App from "./app";
+import KeyboardShortcuts from "./util/keyboard-shortcuts";
 import DocumentCollectionStore from "./stores/document-collection";
 import DocumentStore from "./stores/document";
 import DocumentCollectionActions from "./actions/document-collection";
@@ -15,6 +16,7 @@ const Main = {
       documentActions: new DocumentActions()
     };
 
+    new KeyboardShortcuts();
     this.renderApp(context);
   },
 
