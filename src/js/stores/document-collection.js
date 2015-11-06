@@ -1,5 +1,5 @@
-import { assign as _extend, clone as _clone } from "lodash";
-import cuid from "cuid";
+import { assign as _extend } from "lodash";
+import uuid from "uuid";
 import messenger from "sumac/dist/messenger";
 import File from "../model/file";
 
@@ -20,7 +20,8 @@ _extend(DocumentCollectionStore.prototype, messenger, {
   },
 
   subscriptions: {
-    onRequestFileOpen: "app file.open"
+    onRequestFileOpen: "app file.open",
+    onRequestFileSave: "app file.save"
   },
 
   init (options = {}) {
@@ -38,7 +39,7 @@ _extend(DocumentCollectionStore.prototype, messenger, {
 
   loadCollection (options = {}) {
     let collection = _extend(options, {
-      id: cuid(),
+      id: uuid.v4(),
       documents: []
     });
 
@@ -54,7 +55,19 @@ _extend(DocumentCollectionStore.prototype, messenger, {
       let file = new File(data.filepath);
 
       this.currentCollection.documents.push(file);
+      this.currentCollection.currentDocument = file;
     }
+  },
+
+  onRequestFileSave (data, env) {
+    this.currentCollection.currentDocument.save((err) => {
+      if (err) {
+        console.log("ERROR saving file", err);
+        throw err;
+      }
+
+      console.log("File saved successfully");
+    });
   }
 
 });

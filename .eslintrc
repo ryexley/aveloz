@@ -24,6 +24,7 @@
     "no-undef": 2,
     "no-unused-vars": [2, {"vars": "all", "args": "none"}],
     "no-underscore-dangle" : 0,
+    "react/jsx-uses-react": 1,
     "react/jsx-no-duplicate-props": 1,
     "react/jsx-no-undef": 1,
     "react/jsx-sort-prop-types": 1,

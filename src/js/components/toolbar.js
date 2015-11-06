@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { assign as _extend } from "lodash";
 import messenger from "sumac/dist/messenger";
 import Icon from "./icon";
@@ -14,7 +14,7 @@ let Toolbar = React.createClass({
         <ul>
           <li><a href="#"><Icon name="bars" title="Menu" onClick={this.menu} /></a></li>
           <li><a href="#"><Icon name="folder-open-o" title="Open" onClick={this.openFile} /></a></li>
-          <li><a href="#"><Icon name="download" title="Save" onClick={this.saveFile} /></a></li>
+          <li><a href="#"><Icon name="download" title="Save to disk" onClick={this.saveFile} /></a></li>
         </ul>
       </nav>
     );

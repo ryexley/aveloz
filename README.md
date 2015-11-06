@@ -18,3 +18,10 @@ Aveloz is (hopes to be) the markdown editor that I've always wanted, but never q
 ##### Aveloz??
 
 [Euphorbia tirucalli](https://en.wikipedia.org/wiki/Euphorbia_tirucalli), also known as the "Pencil Tree"
+
+____
+
+## TODO
+
+* Save file changes to disk
+* Implement/use the [Ace editor](https://ace.c9.io)

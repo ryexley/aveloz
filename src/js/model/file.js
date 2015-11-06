@@ -21,10 +21,6 @@ _extend(File.prototype, messenger, {
     previewChanged: "Document preview.changed"
   },
 
-  subscriptions: {
-    onFileSave: "app file.save"
-  },
-
   open () {
     fs.readFile(this.path, "utf-8", (err, contents, next) => {
       if (err) {
@@ -39,11 +35,16 @@ _extend(File.prototype, messenger, {
   },
 
   subscribeToSourceUpdates () {
-    this.subscribe(`${this.id}.source.changed`, _debounce(this.parseSource, 100));
+    this.subscribe(`${this.id}.source.changed`, this.onSourceChanged);
   },
 
-  parseSource (data, env) {
-    var html = md.render(data.updatedSource);
+  onSourceChanged (data, env) {
+    this.source = data.updatedSource;
+    _debounce(() => { this.parseSource(); }, 100)();
+  },
+
+  parseSource () {
+    var html = md.render(this.source);
     this.trigger("previewChanged", { updatedHtml: html });
   },
 
@@ -60,8 +61,14 @@ _extend(File.prototype, messenger, {
     });
   },
 
-  onFileSave () {
-    console.log("Handling file save request. Saving file:", this.path);
+  save (next) {
+    fs.writeFile(this.path, this.source, (err) => {
+      if (err) {
+        return next(err);
+      }
+
+      next(null);
+    });
   }
 
 });
